@@ -7,5 +7,6 @@ jobs:
       - name: Output Github context
         run: echo "${{ toJSON(github) }}"
       - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "MY_DATE=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+      - name: Echo date
+        run: echo ${{ env.MY_DATE }}
