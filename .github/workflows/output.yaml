@@ -7,6 +7,7 @@ jobs:
       - name: Output Github context
         run: echo "${{ toJSON(github) }}"
       - name: Set Time Variable
-        run: echo "$(date + "%Y-%m-%d")" >> ${TIME}
+        run: |
+          echo "$(date +"%Y-%m-%d")" >> ${TIME}
       - name: Print Time
         run: echo ${TIME}
