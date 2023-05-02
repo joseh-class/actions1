@@ -13,4 +13,5 @@ jobs:
       - name: create text file
         run: touch new_file-${{ env.MY_DATE }}.txt
       - name: see file
-        run: echo ls
+        run: pwd
+        
