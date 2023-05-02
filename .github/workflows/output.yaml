@@ -10,3 +10,7 @@ jobs:
         run: echo "MY_DATE=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
       - name: Echo date
         run: echo ${{ env.MY_DATE }}
+      - name: create text file
+        run: touch new_file-${{ env.MY_DATE }}.txt
+      - name: see file
+        run: echo ls
